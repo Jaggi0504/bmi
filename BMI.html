@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head> <title> Body-Mass Index </title> 
+    
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <style>
+        body
+        {
+        background:url('a.gif');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        }
+        </style>
+
+        <script type="text/javascript">
+        function computeBMI()
+        {
+
+            var height=Number(document.getElementById("height").value);
+            var weight=Number(document.getElementById("weight").value);
+
+            var BMI = Math.round(weight / Math.pow(height, 2) * 10000);
+            
+            document.getElementById("output").innerText=Math.round(BMI*100)/100;
+            var output = Math.round(BMI * 100) / 100;
+            if (output<18.5)
+            document.getElementById("comment").innerText = "Sorry! You are Underweight";
+            if (output>=18.5 && output<=25)
+            document.getElementById("comment").innerText = "Great! You are Normal";
+            if (output>=25 && output<=30)
+            document.getElementById("comment").innerText = "Sorry! You are Obese";
+            if (output>30)
+            document.getElementById("comment").innerText = "Sorry! You are Overweight";
+            
+
+        }
+
+            </script>
+
+    </head>
+    <body>
+            
+            <h1 align="left" color="black"> Calculate your Body-Mass Index  </h1>
+            <h2 align="left" color="black"> Check your fitness </h2> <br> <br>
+
+
+            <label> <b> <i> YOUR HEIGHT: </i> </b> </label>
+            <input type="text" placeholder="Enter your height in cm" id="height"/> <br> <br> <br> <br>
+
+            <label> <b> <i> YOUR WEIGHT: </i> </b> </label>
+            <input type="text" placeholder="Enter your weight in kg" id="weight"/> <br> <br>
+
+            <button type="submit" class="btn btn-primary" name="submit" onclick="computeBMI();"> Calculate</button> <br> <br> <br>
+
+            <h3>Your BMI is: <span id="output"></span></h3> 
+
+            <h3>This means you are::::      <span id="comment"> </span> </h3> <br> <br> <br>
+            
+            <h1 align="left" text-color="red"> Made by: JAGDEEP SINGH  </h1>
+
+        </body>
+
+    </html>
